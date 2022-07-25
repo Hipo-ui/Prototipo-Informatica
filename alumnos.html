@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/logos/escudo-unsij-white.png" type="image/png">
+    <title>Alumnos | Licenciatura en Informática</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <app-header>
+            <template v-slot:about>
+                <a href="./acerca_de.html" class="navbar-link">Acerca de la carrera</a>
+            </template>
+            <template v-slot:login-info>
+                <a href="./informacion_ingreso.html" class="navbar-link">Información de ingreso</a>
+            </template>
+            <template v-slot:students>
+                <a href="./alumnos.html" class="navbar-link navbar-link-active">Alumnos</a>
+            </template>
+            <template v-slot:teachers>
+                <a href="./profesores.html" class="navbar-link">Profesores</a>
+            </template>
+            <template v-slot:contact>
+                <a href="./contacto.html" class="navbar-link">Contacto</a>
+            </template>
+            <template v-slot:faqs>
+                <a href="./preguntas_frecuentes.html" class="navbar-link">Preguntas frecuentes</a>
+            </template>
+        </app-header>
+        <!-- /Header -->
+
+
+        <!-- Menú Mobile -->
+        <app-menu-mobile>
+            <template v-slot:about>
+                <a href="./acerca_de.html" class="navbar-link">Acerca de la carrera</a>
+            </template>
+            <template v-slot:login-info>
+                <a href="./informacion_ingreso.html" class="navbar-link">Información de ingreso</a>
+            </template>
+            <template v-slot:students>
+                <a href="./alumnos.html" class="navbar-link navbar-link-active">Alumnos</a>
+            </template>
+            <template v-slot:teachers>
+                <a href="./profesores.html" class="navbar-link">Profesores</a>
+            </template>
+            <template v-slot:contact>
+                <a href="./contacto.html" class="navbar-link">Contacto</a>
+            </template>
+            <template v-slot:faqs>
+                <a href="./preguntas_frecuentes.html" class="navbar-link">Preguntas frecuentes</a>
+            </template>
+        </app-menu-mobile>
+        <!-- /Menú Mobile -->
+
+        
+        <!-- Breadcumb -->
+        <app-breadcum-front>
+            <template v-slot:current-page>
+                Alumnos
+            </template>           
+        </app-breadcum-front>
+        <!-- Breadcumb -->
+
+
+        <!-- Contennido -->
+        <main class="section-spacing">
+
+            <!-- Trabajos -->
+            <section class="section-container">
+                <header class="title-dark">
+                    Lo que nuestros alumnos realizan
+                </header>
+                <div class="swiper swiperEvidence w-full h-full drop-shadow-xl" data-aos="fade-up">
+                    <div class="swiper-wrapper">
+
+                        <app-evidence>
+                            <template v-slot:image>
+                                <img src="./img/photos/imagen-1.JPG" alt="" class="evidence_item-content_image-figure"
+                                    loading="lazy">
+                            </template>
+                            <template v-slot:title>
+                                Desarrollo de videojuego con Unity.
+                            </template>
+                            <template v-slot:topic>
+                                Programación visual
+                            </template>
+                            <template v-slot:students>
+                                Alumnos del sexto semestre
+                            </template>
+                            <template v-slot:description>
+                                Crear un videojuego ha sido una de las cosas más desafiantes que
+                                hemos realizado, aprendimos mucho durante el proceso, desde realizar
+                                un prototipo hasta darle funcionalidad.
+                            </template>
+                        </app-evidence>
+
+                        <app-evidence>
+                            <template v-slot:image>
+                                <img src="./img/photos/imagen-15.jpeg" alt="" class="evidence_item-content_image-figure"
+                                    loading="lazy">
+                            </template>
+                            <template v-slot:title>
+                                Desarrollo de circuitos electrónico.
+                            </template>
+                            <template v-slot:topic>
+                                Electrónica I
+                            </template>
+                            <template v-slot:students>
+                                Alumnos del tercer semestre
+                            </template>
+                            <template v-slot:description>
+                                Aprender a diseñar circuitos es entender cómo funciona nuestro entorno,
+                                vivimos rodeados de dispositivos electrónicos, definitivamente ahora vemos
+                                el mundo desde otra perspectiva más interesante.
+                            </template>
+                        </app-evidence>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+            <!-- /Trabajos -->
+
+
+            <!-- Enlaces de interés -->
+            <section class="section-container" data-aos="zoom-in-up" data-aos-delay="1000">
+                <div class="target_item">
+                    <div class="target_item-content_text lg:w-7/12">
+                        <header class="title-light">
+                            Enlaces de interés
+                        </header>
+                        <div class="target_item-content_link">
+                            <a href="https://drive.google.com/file/d/1BuUWatLp65C4C_lsIV8dX-ta9Wcb0gtZ/view?usp=sharing" target="_blank" class="target_item-content_link-link">
+                                <div class="hidden md:block">
+                                    <img src="./img/draws/calendar.png" alt="" width="60">
+                                </div>
+                                Calendario escolar
+                            </a>
+
+                            <a href="https://drive.google.com/file/d/1n--MRwfU-6cCax0z1_iCVxukxvWo0J-a/view?usp=sharing" target="_blank" class="target_item-content_link-link">
+                                <div class="hidden md:block">
+                                    <img src="./img/draws/clock.png" alt="" width="60">
+                                </div>
+                                Horario de clases
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block lg:w-4/12">
+                        <img src="./img/draws/chain.png" alt="" class="w-96" data-aos="zoom-in">
+                    </div>
+                </div>
+            </section>
+            <!-- /Enlaces de interés -->
+
+
+            <!-- Vacantes -->
+            <section class="section-container" data-aos="fade-right">
+                <div class="section-cards">
+                    <header class="title-dark">
+                        Vacantes
+                    </header>
+                    <div class="relative overflow-auto mx-2 lg:mx-0">
+                        <div id="tabs" class="w-full flex flex-row gap-spacing overflow-x-auto snap-x pb-2">
+                            <div class="link link-lg link_button link_button-active">
+                                <a href="#first" id="default-tab" class="truncate">
+                                    Estancias profesionales
+                                </a>
+                            </div> 
+                            <div class="link link-lg link_button">
+                                <a href="#second" class="truncate">
+                                    Servicio social
+                                </a>
+                            </div>
+                        </div>
+                    </div>                
+                    <div id="tab-contents">
+                        <div class="cards-container" id="first">
+
+                            <app-vacant>
+                                <template v-slot:title>
+                                    Diseño de aplicación web
+                                </template>
+                                <template v-slot:company>
+                                    Kada Software
+                                </template>
+                                <template v-slot:place>
+                                    Huajuapan de León, Oaxaca
+                                </template>
+                                <template v-slot:date>
+                                    17 Jun 2022                                    
+                                </template>
+                                <template v-slot:link>
+                                    <a href="#" class="link link_button">Ver detalles</a>
+                                </template>
+                            </app-vacant>
+
+                            <app-vacant>
+                                <template v-slot:title>
+                                    Entrenamiento de redes neuronales
+                                </template>
+                                <template v-slot:company>
+                                    Kada Software
+                                </template>                                
+                                <template v-slot:place>
+                                    Huajuapan de León, Oaxaca
+                                </template>
+                                <template v-slot:date>
+                                    17 Jun 2022
+                                </template>
+                                <template v-slot:link>
+                                    <a href="#" class="link link_button">Ver detalles</a>
+                                </template>
+                            </app-vacant>
+
+                            <app-vacant>
+                                <template v-slot:title>
+                                    Gestión de recursos en servidores
+                                </template>
+                                <template v-slot:company>
+                                    Kada Software
+                                </template>
+                                <template v-slot:place>
+                                    Huajuapan de León, Oaxaca
+                                </template>
+                                <template v-slot:date>
+                                    17 Jun 2022
+                                </template>
+                                <template v-slot:link>
+                                    <a href="#" class="link link_button">Ver detalles</a>
+                                </template>
+                            </app-vacant>
+
+                            <!-- <div class="md:col-span-1 md:items-end xl:col-span-full flex flex-row justify-end">
+                                <a href="#" class="link link_primary group">
+                                    Ver más vacantes
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5 transition-all group-hover:ml-2 duration-300 inline"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div> -->
+
+                        </div>
+
+                        <div class="cards-container" id="second">
+
+                            <app-vacant>
+                                <template v-slot:title>
+                                    Desarrollador front end jr.
+                                </template>
+                                <template v-slot:company>
+                                    Kada Software
+                                </template>
+                                <template v-slot:place>
+                                    Huajuapan de León, Oaxaca
+                                </template>
+                                <template v-slot:date>
+                                    17 Jun 2022
+                                </template>
+                                <template v-slot:link>
+                                    <a href="#" class="link link_button">Ver detalles</a>
+                                </template>
+                            </app-vacant>
+
+                            <app-vacant>
+                                <template v-slot:title>
+                                    Principiante scrum master
+                                </template>
+                                <template v-slot:company>
+                                    Kada Software
+                                </template>
+                                <template v-slot:place>
+                                    Huajuapan de León, Oaxaca
+                                </template>
+                                <template v-slot:date>
+                                    17 Jun 2022
+                                </template>
+                                <template v-slot:link>
+                                    <a href="#" class="link link_button">Ver detalles</a>
+                                </template>
+                            </app-vacant>
+
+                            <app-vacant>
+                                <template v-slot:title>
+                                    Tester de Ruby on rails
+                                </template>
+                                <template v-slot:company>
+                                    Kada Software
+                                </template>
+                                <template v-slot:place>
+                                    Huajuapan de León, Oaxaca
+                                </template>
+                                <template v-slot:date>
+                                    17 Jun 2022
+                                </template>
+                                <template v-slot:link>
+                                    <a href="#" class="link link_button">Ver detalles</a>
+                                </template>
+                            </app-vacant>
+
+                            <!-- <div class="md:col-span-1 md:items-end xl:col-span-full flex flex-row justify-end">
+                                <a href="#" class="link link_primary group">
+                                    Ver más vacantes
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="h-5 w-5 transition-all group-hover:ml-2 duration-300 inline"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /Vacantes -->
+
+        </main>
+        <!-- Contenido -->
+
+
+        <!-- Footer -->
+        <app-footer>
+        </app-footer>
+        <!-- /Footer -->
+    </div>
+
+    <!-- Componentes -->
+    <script src="./js/app.js"></script>
+    <!-- Menú -->
+    <script src="./js/mobile-menu.js"></script>
+    <!-- Tabs -->
+    <script src="./js/buttom-tabs.js"></script>
+
+    <!-- Carrusel -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiperWorks = new Swiper('.swiperEvidence', {
+            autoHeight: true,
+            centeredSlides: true,
+            effect: "fade",
+            keyboard: {
+                enabled: true,
+            },
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            }
+        });
+    </script>
+
+    <!-- Animaciones -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000,
+            delay: 800,
+            once: true,
+        });
+    </script>
+</body>
+
+</html>

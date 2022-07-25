@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+    <link rel="shortcut icon" href="./img/logos/escudo-unsij-white.png" type="image/png">
+    <title>Profesores | Licenciatura en Informática</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <app-header>
+            <template v-slot:about>
+                <a href="./acerca_de.html" class="navbar-link">Acerca de la carrera</a>
+            </template>
+            <template v-slot:login-info>
+                <a href="./informacion_ingreso.html" class="navbar-link">Información de ingreso</a>
+            </template>
+            <template v-slot:students>
+                <a href="./alumnos.html" class="navbar-link">Alumnos</a>
+            </template>
+            <template v-slot:teachers>
+                <a href="./profesores.html" class="navbar-link navbar-link-active">Profesores</a>
+            </template>
+            <template v-slot:contact>
+                <a href="./contacto.html" class="navbar-link">Contacto</a>
+            </template>
+            <template v-slot:faqs>
+                <a href="./preguntas_frecuentes.html" class="navbar-link">Preguntas frecuentes</a>
+            </template>
+        </app-header>
+        <!-- /Header -->
+
+
+        <!-- Menú Mobile -->
+        <app-menu-mobile>
+            <template v-slot:about>
+                <a href="./acerca_de.html" class="navbar-link">Acerca de la carrera</a>
+            </template>
+            <template v-slot:login-info>
+                <a href="./informacion_ingreso.html" class="navbar-link">Información de ingreso</a>
+            </template>
+            <template v-slot:students>
+                <a href="./alumnos.html" class="navbar-link">Alumnos</a>
+            </template>
+            <template v-slot:teachers>
+                <a href="./profesores.html" class="navbar-link navbar-link-active">Profesores</a>
+            </template>
+            <template v-slot:contact>
+                <a href="./contacto.html" class="navbar-link">Contacto</a>
+            </template>
+            <template v-slot:faqs>
+                <a href="./preguntas_frecuentes.html" class="navbar-link">Preguntas frecuentes</a>
+            </template>
+        </app-menu-mobile>
+        <!-- /Menú Mobile -->
+
+
+        <!-- Breadcumb -->
+        <app-breadcum-front>
+            <template v-slot:current-page>
+                Profesores
+            </template>
+        </app-breadcum-front>
+        <!-- Breadcumb -->
+
+
+        <!-- Contennido -->
+        <main class="w-full">
+
+            <!-- Mensaje feedback -->
+            <div class="relative hidden feed-copy">
+                <span class="teacher_item-bullet fixed">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="teacher_item-bullet-icon" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    Correo copiado
+                </span>
+            </div>
+            <!-- /Mensaje feedback -->
+
+            <!-- Profesores -->
+            <section class="section-fluid section-container">
+                <div>
+                    <header class="title-dark">
+                        Nuestros profesores
+                    </header>
+                </div>
+
+                <div class="section-teacher">
+                    <app-teacher>
+                        <template v-slot:image>
+                            <img src="./img/teachers/lobato.jpeg" alt="" class="teacher_item-image">
+                        </template>
+                        <template v-slot:name>
+                            Dr. Salvador Enrique Lobato Larios
+                        </template>
+                        <template v-slot:grade>
+                            Doctorado en Ciencias
+                        </template>
+                        <template v-slot:email>
+                            <button class="teacher_item-info-email copy email"
+                                data-clipboard-text="salvadorl@unsij.edu.mx">
+                                salvadorl@unsij.edu.mx
+                            </button>
+                        </template>
+                        <template v-slot:office>
+                            Instituto de idiomas
+                        </template>
+                        <template v-slot:link>
+                            <a href="http://www.unsij.edu.mx/profesores/cv/CV_Salvador_Enrique_Lobato_Larios.pdf"
+                                target="_blank" class="link link_button">Ver currículum vitae</a>
+                        </template>
+                    </app-teacher>
+
+                    <app-teacher>
+                        <template v-slot:image>
+                            <img src="./img/teachers/florentino.jpeg" alt="" class="teacher_item-image">
+                        </template>
+                        <template v-slot:name>
+                            M.I.T.I.Florentino Méndez Gijón
+                        </template>
+                        <template v-slot:grade>
+                            Maestría en Ingeniería en Tecnologías de la Información
+                        </template>
+                        <template v-slot:email>
+                            <button class="teacher_item-info-email copy email"
+                                data-clipboard-text="fmendez@unsij.edu.mx">
+                                fmendez@unsij.edu.mx
+                            </button>
+                        </template>
+                        <template v-slot:office>
+                            Instituto de ciencias ambientales
+                        </template>
+                        <template v-slot:link>
+                            <a href="http://www.unsij.edu.mx/profesores/cv/CV_Florentino_Mendez_Gijon.pdf"
+                                target="_blank" class="link link_button">Ver currículum vitae</a>
+                        </template>
+                    </app-teacher>
+
+                    <app-teacher>
+                        <template v-slot:image>
+                            <img src="./img/teachers/mireya.jpeg" alt="" class="teacher_item-image">
+                        </template>
+                        <template v-slot:name>
+                            M.A.D. Mireya López Luna
+                        </template>
+                        <template v-slot:grade>
+                            Maestría en Alta Dirección
+                        </template>
+                        <template v-slot:email>
+                            <button class="teacher_item-info-email copy email"
+                                data-clipboard-text="mireya@unsij.edu.mx">
+                                mireya@unsij.edu.mx
+                            </button>
+                        </template>
+                        <template v-slot:office>
+                            Instituto de ciencias ambientales
+                        </template>
+                        <template v-slot:link>
+                            <a href="http://www.unsij.edu.mx/profesores/cv/CV_Mireya_Lopez_Luna.pdf" target="_blank"
+                                class="link link_button">Ver currículum vitae</a>
+                        </template>
+                    </app-teacher>
+
+                    <app-teacher>
+                        <template v-slot:image>
+                            <img src="./img/teachers/juan_gabriel.jpeg" alt="" class="teacher_item-image">
+                        </template>
+                        <template v-slot:name>
+                            M.C. Juan Gabirel Ruiz Ruiz
+                        </template>
+                        <template v-slot:grade>
+                            Maestría en Medios Interactivos
+                        </template>
+                        <template v-slot:email>
+                            <button class="teacher_item-info-email copy email"
+                                data-clipboard-text="jugaruiz@unsij.edu.mx">
+                                jugaruiz@unsij.edu.mx
+                            </button>
+                        </template>
+                        <template v-slot:office>
+                            Instituto de ciencias ambientales
+                        </template>
+                        <template v-slot:link>
+                            <a href="http://www.unsij.edu.mx/profesores/cv/CV_Juan_Gabriel_Ruiz_Ruiz.pdf"
+                                target="_blank" class="link link_button">Ver currículum vitae</a>
+                        </template>
+                    </app-teacher>
+
+                    <app-teacher>
+                        <template v-slot:image>
+                            <img src="./img/teachers/laura.jpeg" alt="" class="teacher_item-image">
+                        </template>
+                        <template v-slot:name>
+                            M.I.T.I. Laura López Núñez
+                        </template>
+                        <template v-slot:grade>
+                            Maestría en Ingeniería en Tecnologías de la Información
+                        </template>
+                        <template v-slot:email>
+                            <button class="teacher_item-info-email copy email"
+                                data-clipboard-text="lauraln@unsij.edu.mx">
+                                lauraln@unsij.edu.mx
+                            </button>
+                        </template>
+                        <template v-slot:office>
+                            Instituto de ciencias ambientales
+                        </template>
+                        <template v-slot:link>
+                            <a href="http://www.unsij.edu.mx/profesores/cv/CV_Laura_Lopez_Nuniez.pdf" target="_blank"
+                                class="link link_button">Ver currículum vitae</a>
+                        </template>
+                    </app-teacher>
+                </div>
+
+            </section>
+            <!-- /Profesores -->
+
+        </main>
+        <!-- Contenido -->
+
+
+        <!-- Footer -->
+        <app-footer>
+        </app-footer>
+        <!-- /Footer -->
+    </div>
+
+
+    <!-- Componentes -->
+    <script src="./js/app.js"></script>
+    <!-- Menú -->
+    <script src="./js/mobile-menu.js"></script>
+
+    <!-- Animaciones -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000,
+            delay: 800,
+            once: true,
+        });
+    </script>
+
+    <!-- Copy Clipboard-->
+    <script>
+        var clipboard = new ClipboardJS('.copy');
+        var email = document.querySelector('.email');
+        var message = document.querySelector('.feed-copy');
+
+        clipboard.on('success', function (e) {
+            message.classList.remove("hidden");
+            message.classList.add("block");
+
+            setTimeout(function () {
+                message.classList.toggle("hidden");
+            }, 1000);
+        });
+    </script>
+
+</body>
+
+</html>

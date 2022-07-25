@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/logos/escudo-unsij-white.png" type="image/png">
+    <title>Información de ingreso | Licenciatura en Informática</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <app-header>
+            <template v-slot:about>
+                <a href="./acerca_de.html" class="navbar-link">Acerca de la carrera</a>
+            </template>
+            <template v-slot:login-info>
+                <a href="./informacion_ingreso.html" class="navbar-link navbar-link-active">Información de ingreso</a>
+            </template>
+            <template v-slot:students>
+                <a href="./alumnos.html" class="navbar-link">Alumnos</a>
+            </template>
+            <template v-slot:teachers>
+                <a href="./profesores.html" class="navbar-link">Profesores</a>
+            </template>
+            <template v-slot:contact>
+                <a href="./contacto.html" class="navbar-link">Contacto</a>
+            </template>
+            <template v-slot:faqs>
+                <a href="./preguntas_frecuentes.html" class="navbar-link">Preguntas frecuentes</a>
+            </template>
+        </app-header>
+        <!-- /Header -->
+
+
+        <!-- Menú Mobile -->
+        <app-menu-mobile>
+            <template v-slot:about>
+                <a href="./acerca_de.html" class="navbar-link">Acerca de la carrera</a>
+            </template>
+            <template v-slot:login-info>
+                <a href="./informacion_ingreso.html" class="navbar-link navbar-link-active">Información de ingreso</a>
+            </template>
+            <template v-slot:students>
+                <a href="./alumnos.html" class="navbar-link">Alumnos</a>
+            </template>
+            <template v-slot:teachers>
+                <a href="./profesores.html" class="navbar-link">Profesores</a>
+            </template>
+            <template v-slot:contact>
+                <a href="./contacto.html" class="navbar-link">Contacto</a>
+            </template>
+            <template v-slot:faqs>
+                <a href="./preguntas_frecuentes.html" class="navbar-link">Preguntas frecuentes</a>
+            </template>
+        </app-menu-mobile>
+        <!-- /Menú Mobile -->
+
+
+        <!-- Breadcumb -->
+        <app-breadcum-front>
+            <template v-slot:current-page>
+                Información de ingreso
+            </template>           
+        </app-breadcum-front>
+        <!-- Breadcumb -->
+
+
+        <!-- Contennido -->
+        <main class="section-spacing">
+
+            <!-- Requisitos -->
+            <section class="section-container">          
+                <header class="title-dark">
+                    Requisitos para el ingreso
+                </header>
+                <div class="section-requeriment">
+                    <div class="requirement-content-image" data-aos="fade-up">                       
+                    </div>
+
+                    <div class="requirement-content-text" data-aos="zoom-in">
+                        <app-requirement>
+                            <template v-slot:description>2 Copias del acta de nacimiento</template>
+                        </app-requirement>
+
+                        <app-requirement>
+                            <template v-slot:description>2 Copias de la CURP</template>
+                        </app-requirement>
+
+                        <app-requirement>
+                            <template v-slot:description>2 Copias del Certificado de secundaria</template>
+                        </app-requirement>
+
+                        <app-requirement>
+                            <template v-slot:description>2 Copias del Certificado de bachillerato o Constancia de
+                                estudios con tira de materias del 1° al 5° semestre</template>
+                        </app-requirement>
+
+                        <app-requirement>
+                            <template v-slot:description>6 Fotografías tamaño infantil blanco y negro en papel
+                                mate</template>
+                        </app-requirement>
+
+                        <app-requirement>
+                            <template v-slot:description>Original y 2 copias del Comprobante de depósito</template>
+                        </app-requirement>
+                    </div>
+                </div>
+            </section>
+            <!-- /Requisitos -->
+
+
+            <!-- Fechas -->
+            <div class="section-fluid bg-accent">
+                <section class="section-container">
+                    <header class="title-dark text-center">
+                        Fechas importantes
+                    </header>
+                    <div class="section-date">
+                        <app-date>
+                            <template v-slot:number>1</template>
+                            <template v-slot:title>Entrega de fichas:</template>
+                            <template v-slot:description>del 18 de febrero al 22 de junio de 2022.</template>
+                        </app-date>
+
+                        <app-date>
+                            <template v-slot:number>2</template>
+                            <template v-slot:title>Examen de selección:</template>
+                            <template v-slot:description>28 de mayo y 04 de julio de 2022.</template>
+                        </app-date>
+
+                        <app-date>
+                            <template v-slot:number>3</template>
+                            <template v-slot:title>Inscripciones al curso propedéutico:</template>
+                            <template v-slot:description>18 al 22 de julio de 2022.</template>
+                        </app-date>
+
+                        <app-date>
+                            <template v-slot:number>4</template>
+                            <template v-slot:title>Curso propedéutico:</template>
+                            <template v-slot:description>01 de agosto al 23 de septiembre de 2022.</template>
+                        </app-date>
+                    </div>
+                </section>
+            </div>
+            <!-- /Fechas -->
+
+
+            <!-- Costo -->
+            <section class="section-container">
+                <div class="section_description" data-aos="fade-up">
+                    <div class="description-content_text">
+                        <header class="title-dark">
+                            Costo
+                        </header>
+                        <p class="content_text">
+                            Formar licenciados en Informática líderes, analíticos,
+                            críticos, creativos y emprendedores, con una sólida preparación científica,
+                            tecnológica y humanista, con la capacidad y habilidad para analizar, desarrollar
+                            e implementar sistemas de información, así como para administrar óptimamente los
+                            recursos informáticos de una empresa o institución para contribuir a mejorar
+                            su funcionamiento, colaborando activamente para dar respuesta a la problemática y
+                            necesidades que se detecten en materia de informática, actuando como agentes de
+                            cambio para el desarrollo de la región, del estado y del país.
+                        </p>
+                    </div>
+                    <div class="description-content_image">
+                        <div class="description-content_image-box">
+                            <img src="./img/photos/imagen-6.JPG" alt="Un alumno codificando un algoritmo."
+                                class="description-content_image-figure">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /Costo -->
+
+            
+            <!-- Becas -->
+            <section class="section-container">
+                <div class="section_description" data-aos="fade-up">
+                    <div class="description-content_image">
+                        <div class="description-content_image-box">
+                            <img src="./img/photos/imagen-4.JPG" alt="Un alumno codificando un algoritmo."
+                                class="description-content_image-figure">
+                        </div>
+                    </div>
+                    <div class="description-content_text">
+                        <header class="title-dark">
+                            Becas
+                        </header>
+                        <p class="content_text">
+                            Formar licenciados en Informática líderes, analíticos,
+                            críticos, creativos y emprendedores, con una sólida preparación científica,
+                            tecnológica y humanista, con la capacidad y habilidad para analizar, desarrollar
+                            e implementar sistemas de información, así como para administrar óptimamente los
+                            recursos informáticos de una empresa o institución para contribuir a mejorar
+                            su funcionamiento, colaborando activamente para dar respuesta a la problemática y
+                            necesidades que se detecten en materia de informática, actuando como agentes de
+                            cambio para el desarrollo de la región, del estado y del país.
+                        </p>
+                    </div>                    
+                </div>
+            </section>
+            <!-- /Becas -->
+
+        </main>
+        <!-- Contenido -->
+
+
+        <!-- Footer -->
+        <app-footer>
+        </app-footer>
+        <!-- /Footer -->
+    </div>
+
+    <!-- Componentes -->
+    <script src="./js/app.js"></script>
+    <!-- Menú -->
+    <script src="./js/mobile-menu.js"></script>
+
+    <!-- Animaciones -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000,
+            delay: 800,
+            once: true,
+        });
+    </script>
+</body>
+
+</html>
