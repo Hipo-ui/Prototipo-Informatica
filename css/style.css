@@ -1,0 +1,1344 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Open Sans, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x:hidden;
+    @apply bg-slate-50/50;
+    @apply text-gray-600;
+    @apply font-medium;
+    @apply text-base;
+  }
+
+  label {
+    @apply text-lg text-primary-600 font-semibold;
+  }
+
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select { 
+    @apply w-full border-accent-100 rounded text-gray-700 caret-accent-600 py-3
+    focus:border-accent-500 focus:ring-4 focus:ring-accent-300/50;
+  }
+
+  [type='checkbox'], [type='radio'] {
+    @apply border-gray-200 rounded
+    focus:border-accent-500 focus:ring-4 focus:ring-accent-300/50;
+  }
+}
+
+@layer components {
+/*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 TEXTOS 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */
+  .text-principal {
+    @apply 
+    text-white text-5xl font-title font-extrabold 
+    leading-loose
+    lg:leading-none
+    xl:text-7xl;
+  }
+
+  .text-emphasis {
+    @apply 
+    text-accent-500;
+  }
+
+  .title-light {
+    @apply 
+    text-white text-4xl font-title font-extrabold
+    xl:text-5xl;
+  }
+
+  .title-dark {
+    @apply 
+    text-primary-700 text-4xl font-title font-extrabold
+    xl:text-5xl;
+  }
+
+  .subtitle {
+    @apply 
+    text-gray-700 text-2xl font-title font-semibold;
+  }
+
+  .content_text-light {
+    @apply 
+    text-white/90 text-lg 
+    leading-relaxed tracking-wide;
+  }
+
+  .content_text {
+    @apply 
+    text-lg 
+    leading-relaxed tracking-wide;
+  }
+
+/*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 SECCIONES 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */
+
+  .gap-spacing {
+    @apply gap-9;
+  }
+
+  .section-fluid {
+    @apply 
+    py-14 
+    lg:py-28;
+  }
+
+  .section-container {
+    @apply 
+    container 
+    flex flex-col gap-spacing 
+    mx-auto;
+  }
+
+  .section-spacing {
+    @apply 
+    flex flex-col gap-20
+    my-20
+    lg:gap-32
+    lg:my-32;
+  }  
+
+  .bg-accent {
+    @apply 
+    bg-accent-50;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 OTROS 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */
+
+  .title_line {
+    @apply 
+    w-3/5 
+    rounded
+    border-2 border-primary-500;
+  }
+
+  .input_group {
+    @apply 
+    flex flex-col gap-1;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 HEADER 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */
+
+  .header {
+    @apply 
+    w-full 
+    bg-primary-600 
+    text-white/60 font-title font-medium 
+    shadow-lg;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 NAVBAR 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */
+
+  .navbar {
+    @apply 
+    container 
+    flex flex-row justify-between
+    py-2
+    mx-auto;
+  }
+
+  .navbar-logo {
+    @apply 
+    flex flex-row gap-4 items-center;
+  }
+
+  .navbar-logo-name { 
+    @apply 
+    text-white text-xl 
+    truncate py-2;
+  }
+
+  .navbar-nav {
+    @apply 
+    flex flex-row items-center;
+  }
+
+  .navbar-nav-content {
+    @apply 
+    hidden 
+    xl:block;
+  }
+
+  .navbar-nav-content-ul {
+    @apply 
+    flex flex-row gap-6 
+    py-2;
+  }
+
+  .navbar-link {
+    @apply 
+    hover:text-white;
+  }
+
+  .navbar-link-active {
+    @apply 
+    text-white;
+  }
+
+  .navbar-menu {
+    @apply 
+    m-2
+    xl:hidden;
+  }
+
+  .navbar-menu-icon {
+    @apply 
+    h-9 w-9 
+    rounded-full
+    bg-primary-500
+    fill-transparent stroke-2 stroke-white 
+    p-1
+    focus:bg-primary-700
+    active:bg-primary-700;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 MENÚ MÓVIL 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */
+
+  .menu-mobile {
+    @apply 
+    absolute 
+    header 
+    py-8
+    z-10;
+  }
+
+  .menu-mobile-nav {
+    @apply 
+    container 
+    mx-auto;
+  }
+
+  .menu-mobile-nav-ul {
+    @apply 
+    flex flex-col gap-6 
+    text-lg;
+  }
+
+  .menu-mobile-button {
+    @apply 
+    flex flex-row justify-end 
+    my-1;
+  }
+
+  .menu-mobile-button-close {
+    @apply 
+    bg-primary-700 rounded-full 
+    text-white font-semibold
+    select-none 
+    p-3
+    focus:bg-primary-800
+    active:bg-primary-900/50;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 FOOTER 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */ 
+
+  .footer {
+    @apply 
+    w-full 
+    bg-primary-800 
+    py-16;
+  }
+
+  .footer-content {
+   @apply 
+   container 
+   mx-auto 
+   grid gap-16 justify-center
+   md:grid-cols-3; 
+  }
+
+  .footer-content-logos {
+    @apply 
+    flex flex-col gap-8 justify-center items-center
+    lg:flex-row;
+  }
+
+  .footer-title {
+    @apply 
+    text-white text-xl font-title font-bold;
+  }
+
+  .footer-link {
+    @apply 
+    flex flex-row gap-3 
+    text-white text-sm font-medium 
+    hover:text-accent-300;
+  }
+
+  .footer-link-icon {
+    @apply 
+    w-6 h-6 
+    fill-transparent stroke-2 stroke-current;
+  }
+
+  .footer-social_icon {
+    @apply 
+    w-fit 
+    text-white text-4xl 
+    hover:text-accent-300;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 BOTONES 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */ 
+
+  .btn {
+    @apply 
+    w-fit
+    flex flex-row gap-1 
+    rounded 
+    font-title font-semibold 
+    shadow 
+    drop-shadow-sm 
+    px-4 py-2 ;
+    /*inline-block*/
+  }
+
+  .btn-lg {
+    @apply 
+    text-xl 
+    px-6 py-3;
+  }
+
+  .btn-block {
+    @apply 
+    w-full 
+    justify-center;
+  }
+
+  .btn_primary {
+    @apply  
+    bg-primary-600  
+    text-white  
+    hover:bg-primary-700 
+    hover:text-white
+    active:bg-primary-800
+    focus:outline-none focus:ring-4 focus:ring-primary-200;;
+  } 
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 LINKS 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */ 
+
+  .link {
+    @apply 
+    w-fit
+    flex flex-row gap-2 items-center 
+    font-title font-semibold 
+    py-2 
+    no-underline;
+  }
+
+  .link-lg {
+    @apply 
+    text-2xl 
+    py-1;
+  }
+
+  .link_primary {
+    @apply 
+    text-accent-600 
+    hover:text-accent-700
+    hover:underline hover:underline-offset-4;
+  }
+
+  .link_button {
+    @apply 
+    rounded-full 
+    border-2 border-accent-500 
+    text-accent-600 
+    py-1 px-3 
+    hover:bg-accent-600 hover:text-white
+    active:bg-accent-700
+    focus:outline-none focus:ring focus:ring-accent-200;
+  }
+
+  .link_button-alter {
+    @apply 
+    rounded-full 
+    border-2 border-white 
+    text-white
+    py-1 px-3 
+    hover:bg-white hover:text-primary-600
+    active:bg-primary-800
+    focus:outline-none focus:ring focus:ring-primary-200;
+  }
+
+  .link_button-active {
+    @apply 
+    bg-accent-700 
+    text-white 
+    border-accent-700 hover:bg-accent-700;
+  }
+
+  .link-icon {
+    @apply 
+    w-6 h-6 
+    inline 
+    fill-transparent stroke-[4] stroke-current
+    transition-all duration-300 
+    group-hover:ml-2;
+  }
+
+  .content-link {
+    @apply mx-auto lg:mx-0;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 COMPONENTES COMPARTIDOS 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */ 
+
+  /*  🟡 🟡 🟡 Breadcumbs */
+  .breadcumb-section {
+    @apply 
+    container  
+    flex flex-row
+    mx-auto mt-10;
+  }
+
+  .breadcumb-item {
+    @apply 
+    flex flex-row gap-2;
+  }
+
+  .breadcumb-link {
+    @apply 
+    text-primary-500
+    hover:text-primary-600
+    hover:underline hover:underline-offset-2;
+  }
+
+  .breadcumb-icon {
+    @apply
+    w-6 h-6
+    fill-transparent stroke-2 stroke-current;
+  }
+  
+  /*  🟡 🟡 🟡 Section cards (Últimas novedades y Vacantes) */
+  .section-cards {
+    @apply 
+    w-full 
+    flex flex-col gap-spacing
+    bg-white
+    rounded-lg 
+    border
+    px-6 py-14 
+    drop-shadow-xl
+    lg:px-10; 
+  }
+
+  .cards-container {
+    @apply 
+    grid grid-cols-none gap-spacing
+    md:grid-cols-2 
+    lg:grid-cols-3;
+  }
+
+  /*  🟡 🟡 🟡 Item Card (Avios, Eventos y Vacantes) */
+  .card_item {
+    @apply 
+    h-full 
+    flex flex-col gap-2 justify-between
+    bg-accent-50 
+    rounded-lg
+    border border-accent-100
+    drop-shadow-sm
+    lg:transition lg:ease-in-out lg:duration-500
+    lg:hover:-translate-y-1 lg:hover:scale-105 
+    lg:hover:shadow-accent-100 lg:hover:shadow-lg;
+  }
+
+  .card_item-image {
+    @apply 
+    w-full h-40 
+    rounded-t-lg
+    border-b-8 border-accent-500 
+    object-cover;
+  }
+
+  .card_item-content {
+    @apply 
+    h-full
+    flex flex-col justify-between;
+  }
+
+  .card_item-header {
+    @apply    
+    flex flex-row gap-2 
+    bg-accent-50
+    rounded-t-lg
+    text-lg font-title font-semibold
+    p-4;
+  }
+
+  .card_item-title-icon {
+    @apply 
+    h-6 w-6 
+    fill-transparent stroke-2 stroke-current;
+  }
+
+  .card_item-body {
+    @apply 
+    flex flex-col gap-4 justify-between
+    bg-white
+    rounded-b-lg
+    border-t-8 border-accent-500
+    p-4;
+  }
+
+  .card_item-company {
+    @apply font-title font-semibold;
+  }
+  
+  .card_item-detail {
+    @apply 
+    flex flex-row gap-3 
+    text-sm font-normal;
+  }
+
+  .card_item-detail-icon {
+    @apply 
+    w-5 h-5 
+    fill-transparent stroke-2 stroke-accent-500;
+  }
+
+  .card_item-footer {
+    @apply 
+    flex flex-row gap-1 justify-between items-end content-end;
+  }
+
+  /*  🟡 🟡 🟡 Descripción (Nuestro objetivo, costo, becas) */
+  .section_description {
+    @apply 
+    grid grid-cols-2 gap-20 
+    pb-10;
+  }
+
+  .description-content_text {
+    @apply 
+    col-span-2 
+    flex flex-col gap-spacing
+    lg:col-auto;
+  }
+
+  .description-content_image {
+    @apply 
+    relative 
+    -bottom-10 
+    rounded-lg rounded-t-none rounded-l-none 
+    border-r-4 border-b-4 border-accent-500 
+    hidden 
+    lg:block;
+  }
+
+  .description-content_image-box {
+    @apply 
+    absolute 
+    -left-10 -top-10
+    w-full h-96
+    rounded-lg;
+  }
+
+  .description-content_image-figure {
+    @apply 
+    w-full h-full  
+    rounded-lg 
+    drop-shadow-2xl
+    object-cover
+    lg:transition lg:ease-in-out lg:duration-700
+    lg:hover:-translate-y-1 lg:hover:scale-105;
+  }
+  
+  /*  🟡 🟡 🟡 Target item (Plan de estudios, Enlaces de interés)Tarjet item (Plan de estudios, Enlaces de interés) */
+  .target_item {
+    @apply 
+    w-full 
+    flex flex-row justify-start items-center gap-spacing
+    bg-primary-800 bg-[url('../img/draws/patterns.svg')] bg-cover bg-no-repeat bg-right-bottom
+    rounded-lg     
+    drop-shadow-xl
+    lg:h-[30rem]
+    lg:transition lg:ease-in-out lg:duration-500
+    lg:hover:-translate-y-1 lg:hover:scale-105 
+    lg:hover:shadow-primary-200 lg:hover:shadow-xl
+    hover:bg-primary-700;
+  }
+
+  .target_item-content_text {
+    @apply 
+    w-full 
+    flex flex-col gap-spacing 
+    bg-black/30 
+    rounded-lg 
+    px-6 py-14
+    lg:bg-transparent 
+    lg:px-10
+    xl:w-3/5;
+  }
+
+  .target_item-content_link {
+    @apply 
+    grid grid-cols-none gap-spacing
+    lg:grid-cols-2;
+  }
+
+  .target_item-content_link-link {
+    @apply 
+    flex flex-row gap-3 justify-center items-center 
+    bg-primary-600 rounded 
+    text-white text-xl font-bold 
+    py-8 px-6
+    hover:bg-primary-50 
+    hover:text-primary-600 
+    hover:underline hover:underline-offset-4
+    transition-all ease-in duration-300;
+  }
+
+  /*  🟡 🟡 🟡 Fechas  */
+  .section-date {
+    @apply 
+    flex flex-col gap-spacing items-center
+    grid-cols-none
+    md:grid md:grid-cols-2;
+  }
+
+  .date_item {
+    @apply 
+    w-full flex flex-row gap-spacing 
+    bg-white rounded-lg 
+    border border-accent-100 
+    shadow-md shadow-accent-200 
+    p-6
+    lg:transition lg:ease-in-out lg:duration-500
+    lg:hover:-translate-y-1 lg:hover:scale-105 
+    lg:hover:shadow-accent-100 lg:hover:shadow-xl;
+  }
+
+  .date_item-content_icon {
+    @apply 
+    flex flex-row;
+  }
+
+  .date_item-content_icon-form {
+    @apply 
+    flex flex-row 
+    w-16 h-16 
+    bg-accent-500 
+    rounded-full 
+    text-white 
+    m-auto;
+  }
+
+  .date_item-content_icon-form-number {
+    @apply 
+    text-3xl font-semibold 
+    m-auto;
+  }
+  
+  .date_item-content_text {
+    @apply flex flex-col gap-2;
+  }
+  
+  .date_item-content_text-header {
+    @apply 
+    text-lg font-title font-semibold;
+  }
+
+  /*  🟡 🟡 🟡 Evidence (Trabajos que los alumnos realizan y Campo de acción) */
+  .evidence_item {
+    @apply 
+    flex flex-col justify-between 
+    bg-white rounded-lg 
+    border border-primary-100
+    lg:flex-row;
+  }
+
+  .evidence_item-content_image {
+    @apply 
+    w-full h-[60vh]
+    lg:w-7/12;
+  }
+
+  .evidence_item-content_image-figure {
+    @apply 
+    w-full h-full 
+    rounded-t-lg
+    object-cover 
+    block
+    lg:rounded-l-lg lg:rounded-r-none;
+  }
+
+  .evidence_item-content_text {
+    @apply 
+    w-full 
+    flex flex-col gap-6 
+    rounded-lg 
+    p-6 pb-8
+    lg:w-5/12
+    lg:justify-center
+    lg:px-20;
+  }
+
+  .evidence_item-info {
+    @apply 
+    flex flex-row gap-1 
+    font-semibold;
+  }
+
+  .evidence_item-info-icon {
+    @apply 
+    h-5 w-5 
+    fill-transparent stroke-current stroke-2;
+  }
+  
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 INICIO 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */  
+
+  /*  🟡 🟡 🟡 Banner */
+  .banner {
+    @apply 
+    relative
+    max-h-[82vh] h-[72vh]
+    flex flex-row justify-end
+    bg-[url('../img/photos/imagen-2.JPG')] bg-cover bg-right
+    xl:h-[82vh]
+    xl:bg-right-bottom xl:bg-fixed;
+  }
+
+  .banner-content {
+    @apply 
+    absolute 
+    w-full h-full;
+  }
+
+  .banner-cover {
+    @apply 
+    w-full h-full 
+    bg-primary-900/60;
+  }
+
+  .banner-container {
+    @apply 
+    container
+    h-full     
+    flex flex-col
+    mx-auto;
+  }
+
+  .banner-body {
+    @apply 
+    w-full 
+    text-center 
+    my-auto
+    lg:w-1/2 lg:text-left;
+  }
+
+  /*  🟡 🟡 🟡 Menu card */
+  .menu_card-container {
+    @apply bg-white rounded-lg p-6 grid grid-cols-none gap-spacing lg:grid-cols-5 drop-shadow;
+  }
+
+  .menu_card_item {
+    @apply flex flex-row gap-4 justify-center items-center 
+    bg-white
+    text-primary-500
+    rounded-lg 
+    border border-primary-100 
+    shadow-sm 
+    p-6 
+    transition-all ease-in duration-300 
+    hover:text-white
+    lg:hover:bg-primary-500
+    lg:hover:border lg:hover:border-primary-300                                     
+    lg:hover:shadow lg:hover:shadow-primary-100 lg:hover:scale-105;
+  }
+
+  .menu_card_item-title {
+    @apply 
+    text-lg font-title font-semibold;
+  }
+
+  .menu_card_item-icon {
+    @apply 
+    w-8 h-8
+    fill-current;
+  }
+
+
+  /*  🟡 🟡 🟡 Modelo educativo */
+  .section-feature {
+    @apply 
+    grid grid-cols-none gap-spacing
+    md:grid-cols-2
+    lg:grid-cols-3;
+  }
+
+  .feature_item {
+    @apply 
+    flex flex-col gap-6 
+    bg-white 
+    rounded-lg 
+    border border-white 
+    drop-shadow 
+    p-6
+    lg:transition lg:ease-in-out lg:duration-500 
+    lg:hover:-translate-y-1 lg:hover:scale-105
+    lg:hover:border lg:hover:border-accent-300 
+    lg:hover:shadow-accent-100 lg:hover:shadow-lg
+    lg:hover:drop-shadow-xl;
+  }
+
+  .feature_item-header {
+    @apply 
+    flex flex-row gap-4 justify-start;
+  }
+
+  .feature_item-icon {
+    @apply 
+    w-fit h-fit 
+    flex flex-row justify-center 
+    bg-accent-50 
+    rounded-full
+    border-2 border-accent-100  
+    mx-auto
+    group-hover:border-accent-300;
+  }
+
+  .feature_item-icon-svg {
+    @apply 
+    w-8 h-8 
+    fill-transparent stroke-2 stroke-primary-500
+    m-2;
+  }
+
+  .feature_item-content {
+    @apply 
+    flex flex-col gap-6;
+  }
+
+  /*  🟡 🟡 🟡 Vida universitaria  */
+  .section-video {
+    @apply 
+    flex flex-col gap-spacing justify-between
+    rounded-lg
+    border border-accent-300
+    px-6 py-14
+    lg:flex-row
+    lg:border-none
+    lg:px-0;
+  }
+
+  .section-content-text {
+    @apply 
+    w-full 
+    flex flex-col justify-center gap-spacing
+    lg:w-5/12      
+    lg:bg-accent-50
+    lg:rounded-lg 
+    lg:border lg:border-accent-300
+    lg:px-10
+    lg:transition lg:ease-in-out lg:duration-500
+    lg:hover:bg-white
+    lg:hover:border lg:hover:border-primary-300;
+  }
+
+  .video-frame {
+    @apply 
+    w-full h-80     
+    rounded-lg
+    aspect-auto 
+    lg:h-[30rem];
+  }
+
+  /*  🟡 🟡 🟡 Promotion cards  */
+  .promotion_card {
+    @apply 
+    grid grid-cols-none gap-spacing 
+    bg-accent-50 
+    rounded-lg 
+    border border-accent-300
+    px-6 py-14
+    lg:h-[35rem] 
+    lg:grid-cols-2 
+    lg:px-10 lg:py-14;
+  }
+
+  .promotion_card-content_text {
+    @apply 
+    flex flex-col justify-center gap-spacing;
+  }
+
+  .promotion_card-content_image {
+    @apply 
+    hidden 
+    lg:flex;
+  }
+
+  .promotion_card-content_image-figure {
+    @apply 
+    w-full h-96 
+    rounded-lg 
+    shadow-md 
+    drop-shadow-lg 
+    object-cover
+    m-auto;
+  }
+
+  /*  🟡 🟡 🟡 Opiniones */
+  .section-opinion {
+    @apply 
+    grid grid-cols-none gap-spacing
+    md:grid-cols-2 
+    xl:grid-cols-3;
+  }
+
+  .opinion_item {
+    @apply 
+    flex flex-col gap-2 justify-between 
+    bg-white 
+    rounded-lg
+    border border-primary-100  
+    drop-shadow-sm 
+    p-4
+    lg:transition lg:ease-in-out lg:duration-500 
+    lg:hover:-translate-y-1 lg:hover:scale-105   
+    lg:hover:border lg:hover:border-primary-300 
+  lg:hover:shadow-primary-100 lg:hover:shadow-lg
+    lg:hover:drop-shadow-xl;
+  }
+
+  .opinion_item-content-text {
+    @apply 
+    flex flex-row justify-start gap-2;
+  }
+
+  .opinion_item-image {
+    @apply 
+    w-20
+    object-cover;
+  }
+
+  .opinion_item-text {
+    @apply 
+    content_text 
+    font-medium
+    italic 
+    break-words 
+    group-hover:text-primary-500;
+  }
+
+  .opinion_item-footer {
+    @apply 
+    flex flex-row justify-end gap-4 items-center;
+  }
+
+  .opinion_item-name {
+    @apply 
+    subtitle 
+    text-lg 
+    font-semibold 
+    group-hover:text-primary-700;
+  }
+
+  .opinion_item-content-avatar {
+    @apply 
+    w-16 h-16
+    bg-primary-100 
+    rounded-full 
+    border-2 border-primary-100 
+    mx-auto
+    group-hover:border-primary-300;
+  }
+
+  .opinion_item-avatar {
+    @apply rounded-full object-cover;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 ACERCA DE 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */  
+
+  /*  🟡 🟡 🟡 Image card (Misión y Visión) */
+  .image_card_item {
+    @apply 
+    min-h-[28rem] h-fit 
+    grid grid-cols-2 
+    bg-white rounded-lg
+    border border-accent-100
+    lg:flex-row 
+    xl:drop-shadow-sm
+    lg:transition lg:ease-in-out lg:duration-500
+    lg:hover:-translate-y-1 lg:hover:scale-105 
+  lg:hover:shadow-accent-100 lg:hover:shadow-xl;
+  }
+
+  .image_card_item-bg {
+    @apply 
+    w-full h-full 
+    bg-cover bg-right-bottom 
+    border-accent-300 
+    hidden
+    lg:block;
+  }
+
+  .image_card_item-content-text {
+    @apply 
+    h-full 
+    grid col-span-2 gap-spacing content-start 
+    rounded-l-lg
+    p-6 py-14 
+    lg:h-full 
+    lg:col-span-1 
+    lg:p-10;
+  }
+
+  /*  🟡 🟡 🟡 Perfil de ingreso y Perfil de egreso */
+  .item_entry-content {
+    @apply 
+    grid grid-cols-none     
+    gap-4
+    lg:grid-cols-2;
+  }
+
+  .item_entry_egress-content-list {
+    @apply 
+    flex flex-col gap-4
+    content_text
+    list-disc 
+    px-6;
+  }
+  
+  /*  🟡 🟡 🟡 Temario  */
+  .section_tematy-content {
+    @apply
+    grid grid-cols-none gap-spacing
+    md:grid-cols-2
+    lg:grid-cols-3;
+  }
+
+  .temary_item {
+    @apply 
+    flex flex-col 
+    bg-white 
+    rounded-lg
+    border border-accent-100 
+    drop-shadow-sm
+    lg:transition lg:ease-in-out lg:duration-500 
+    lg:hover:-translate-y-1 lg:hover:scale-105
+    lg:hover:border lg:hover:border-accent-300 
+    lg:hover:shadow-accent-100 lg:hover:shadow-lg
+    lg:hover:drop-shadow-xl;
+  }
+
+  .temary_item-content_header {
+    @apply 
+    bg-accent-50 
+    rounded-t-lg 
+    border-b-4 
+    border-accent-300 
+    px-6
+    py-4;
+  }
+
+  .temary_item-content {
+    @apply p-6;
+  }
+
+  .temary_item-content-list {
+    @apply 
+    flex flex-col gap-2 
+    text-lg font-medium 
+    list-none list-inside;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 INFORMACIÓN DE INGRESO 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */  
+
+  /*  🟡 🟡 🟡 Requisitos*/
+  .section-requeriment {
+    @apply 
+    grid grid-cols-none gap-spacing
+    xl:grid-cols-9;
+  }
+
+  .requirement-content-image {
+    @apply 
+    w-full h-full
+    bg-[url('../img/photos/imagen-8.JPG')] 
+    bg-cover bg-center 
+    rounded-lg
+    border-4 border-accent-300 
+    drop-shadow
+    hidden 
+    xl:col-span-4 xl:flex xl:items-end;
+  }
+
+  .requirement-content-text {
+    @apply 
+    grid gap-spacing
+    md:grid-cols-2 
+    xl:col-span-5 xl:flex xl:flex-col;
+  }
+
+  .requirement_item {
+    @apply 
+    flex flex-row gap-4 content-center items-center 
+    bg-white 
+    rounded-lg
+    border border-accent-100
+    shadow 
+    p-4;
+  }
+  
+  .requirement_item-content-icon-svg {
+    @apply 
+    w-8 h-8 
+    fill-transparent stroke-2 stroke-accent-500;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 PROFESORES 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */ 
+
+  /*  🟡 🟡 🟡 Profesores */
+  .section-teacher {
+    @apply 
+    grid grid-cols-none gap-spacing
+    lg:grid-cols-2;
+  }
+
+  .teacher_item {
+    @apply 
+    flex flex-col md:flex-row gap-6 justify-between 
+    bg-white 
+    rounded-lg 
+    border border-primary-100 
+    drop-shadow 
+    p-6
+    lg:transition lg:ease-in-out lg:duration-500 
+  lg:hover:border-primary-300     
+  lg:hover:shadow-primary-100 lg:hover:shadow-lg;
+  }
+
+  .teacher_item-content-image {
+    @apply 
+    flex flex-col justify-center
+    mx-auto
+    md:mx-0;
+  }
+
+  .teacher_item-bg-image {
+    @apply 
+    w-44 h-44 
+    flex flex-row justify-center
+    rounded-full 
+    border-4 border-primary-200
+    lg:group-hover:border-primary-400;
+  }
+
+  .teacher_item-image {
+    @apply 
+    w-40 h-40
+    rounded-full 
+    object-cover 
+    m-auto
+    lg:transition lg:ease-in-out lg:duration-500
+    lg:group-hover:scale-105;
+  }
+
+  .teacher_item-content-text {
+    @apply 
+    w-full 
+    flex flex-col gap-6 justify-between;
+  }
+
+  .teacher_item-title {
+    @apply 
+    text-xl font-title font-bold
+    text-center
+    md:text-left;
+  }
+
+  .teacher_item-info {
+    @apply 
+    flex flex-row gap-2
+    font-normal;
+  }
+
+  .teacher_item-info-email {
+    @apply     
+    text-left
+    break-all
+    xl:cursor-pointer;
+  }
+
+  .teacher_item-icon {
+    @apply 
+    w-6 h-6
+    fill-transparent stroke-2 stroke-current;
+  }
+
+  .teacher_item-bullet {
+    @apply 
+    w-fit
+    flex flex-row gap-1 items-center
+    top-40 right-10 
+    lg:top-1/2 lg:right-20 
+    z-10
+    bg-primary-100 
+    rounded-lg 
+    border border-primary-700
+    text-base font-semibold text-primary-700 
+    px-4 py-3
+    transition ease-in-out;
+  }
+
+  .teacher_item-bullet-icon {
+    @apply 
+    w-6 h-6
+    fill-transparent stroke-2 stroke-current;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 CONTACTO 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */ 
+
+  /*  🟡 🟡 🟡 Containers */
+  .section-contacto {
+    @apply 
+    grid grid-cols-none gap-14
+    lg:grid-cols-2 lg:gap-28 xl:gap-20;
+  }
+
+  .contact-form-content {
+    @apply 
+    flex flex-col gap-4;
+  }
+
+  .contact_container {
+    @apply 
+    flex flex-col gap-8 justify-between 
+    bg-white 
+    rounded-lg
+    border border-accent-100  
+    drop-shadow-sm
+    px-4 py-6 
+    lg:p-8;
+  }
+
+  /*  🟡 🟡 🟡 Medios de contacto */
+  .contact_item {
+    @apply 
+    flex flex-col items-center gap-4 
+    text-lg font-semibold text-primary-500
+    lg:flex-row lg:gap-8;
+  }
+
+  .contact_item-icon {
+    @apply 
+    w-10 h-10 
+    fill-transparent stroke-primary-500 stroke-2;
+  } 
+
+  /*  🟡 🟡 🟡 Redes sociales */
+  .social_item {
+    @apply 
+    flex flex-row content-center gap-4 items-center
+    rounded
+    font-semibold
+    p-4;
+  }
+
+  .social_item-icon {
+    @apply 
+    flex flex-col gap-4 
+    mx-auto
+    xl:flex-row;
+  }
+
+  .social_item-icon-svg {
+    @apply
+    w-10 h-10 
+    fill-current
+  }
+
+  .social-item-fb {
+    @apply      
+    bg-blue-200/40 
+    border border-blue-200
+    text-primary-500
+    hover:bg-blue-200;
+  }
+
+  .social-item-tw {
+    @apply      
+    bg-sky-200/40 
+    border border-sky-200
+    text-primary-400
+    hover:bg-sky-200;
+  }
+
+  .social-item-insta {
+    @apply      
+    bg-pink-200/40 
+    border border-pink-200
+    text-pink-500
+    hover:bg-pink-200;
+  }
+
+  .social-item-yt {
+    @apply      
+    bg-red-200/40 
+    border border-red-200
+    text-red-500
+    hover:bg-red-200;
+  }
+
+  /*  🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 PREGUNTAS FRECUENTES 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩 🟩  */ 
+
+  /*  🟡 🟡 🟡 Preguntas */
+  .section-faq {
+    @apply 
+    w-full 
+    flex flex-col gap-spacing 
+    p-0
+    mx-auto
+    xl:w-3/5
+    xl:bg-white 
+    xl:rounded-lg
+    xl:border xl:border-accent-100  
+    xl:p-8;
+  }
+
+  .faq_item {
+    @apply 
+    flex flex-col gap-4 
+    bg-accent-50 
+    rounded-lg 
+    p-4
+    lg:transition lg:ease-in-out lg:duration-500;
+  }
+
+  .faq_item-content_question {
+    @apply 
+    flex flex-row justify-between 
+    text-left;
+  }
+
+  .faq_item-content_question-question {
+    @apply 
+    text-primary-600 text-lg font-title font-semibold;
+  }
+
+  .faq_item-content_question-icon {
+    @apply w-8 h-8 fill-primary-600;
+  }
+
+  .faq_item-content_answer {
+    @apply text-base font-medium;
+  }
+}
